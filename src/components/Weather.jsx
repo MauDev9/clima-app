@@ -29,8 +29,11 @@ function Weather() {
     // 🌐 API Key (memoizada)
     const apiKey = useMemo(() => {
         const key = import.meta.env.VITE_APP_ID;
+        console.log('=== DEBUG INFO ===');
         console.log('API Key exists:', !!key);
-        console.log('Env variables:', import.meta.env);
+        console.log('API Key (first 5 chars):', key ? key.substring(0, 5) + '...' : 'UNDEFINED');
+        console.log('All VITE_ variables:', Object.keys(import.meta.env).filter(k => k.startsWith('VITE_')));
+        console.log('==================');
         return key;
     }, []);
 
