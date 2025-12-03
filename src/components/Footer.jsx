@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import './Footer.css';
 
-function Footer() {
-    const currentYear = new Date().getFullYear();
+const Footer = React.memo(() => {
+    const currentYear = useMemo(() => new Date().getFullYear(), []);
 
     return (
         <footer className="footer">
@@ -16,13 +16,16 @@ function Footer() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="footer-link"
+                    aria-label="Visit developer website"
                 >
                     maudev.co
                 </a>
             </p>
         </footer>
     );
-}
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;
 
