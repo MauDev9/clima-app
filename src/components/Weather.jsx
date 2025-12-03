@@ -27,7 +27,12 @@ function Weather() {
     const [inputValue, setInputValue] = useState("");
 
     // 🌐 API Key (memoizada)
-    const apiKey = useMemo(() => import.meta.env.VITE_APP_ID, []);
+    const apiKey = useMemo(() => {
+        const key = import.meta.env.VITE_APP_ID;
+        console.log('API Key exists:', !!key);
+        console.log('Env variables:', import.meta.env);
+        return key;
+    }, []);
 
     // 🔍 Función principal de búsqueda (memoizada con useCallback)
     const searchCity = useCallback(async (city) => {
