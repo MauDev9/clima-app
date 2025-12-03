@@ -1,0 +1,389 @@
+/* 🎨 Container principal */
+.weather-container {
+    place-self: center;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 🎯 Header con título */
+.header {
+    text-align: center;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    background: linear-gradient(135deg, #fff 0%, #a8daff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 300;
+}
+
+/* 📦 Card del clima */
+.weather{
+    font-size: 18px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 0.8s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.weather:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔍 Barra de búsqueda */
+.search-bar{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.search-bar input {
+    flex: 1;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding: 0 25px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.95);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}
+
+.search-bar input::placeholder {
+    color: #999;
+}
+
+.search-bar img{
+    width: 55px;
+    height: 55px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar img:hover{
+    background-color: #fff;
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar img:active {
+    transform: scale(0.95);
+}
+
+/* ☀️ Icono del clima */
+.weather-icon{
+    width: 150px;
+    margin: 30px 0 20px 0;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 🕐 Contenedor de información de tiempo */
+.time-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 🌞🌙 Badge de día/noche */
+.day-night-badge {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.day-night-badge.day {
+    background: linear-gradient(135deg, #FDB813 0%, #FF9A00 100%);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.day-night-badge.night {
+    background: linear-gradient(135deg, #2C3E50 0%, #4A5568 100%);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* 🕐 Hora local */
+.local-time {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease 0.1s backwards;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 🌡️ Temperatura */
+.temperature{
+    font-size: 64px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🏙️ Ciudad */
+.city{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 🌍 País */
+.country {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    animation: fadeIn 0.6s ease;
+}
+
+/* 📊 Datos del clima (humedad y viento) */
+.weather-data{
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.weather-data .col{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.weather-data .col:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.weather-data .col img{
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.weather-data .col div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.weather-data .col p {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.weather-data .col span{
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ❌ Mensajes de error */
+.error-message {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.2);
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin: 15px 0;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    animation: shake 0.5s ease;
+}
+
+/* ⏳ Estado de carga */
+.loading {
+    color: #fff;
+    font-size: 22px;
+    margin: 40px 0;
+    font-weight: 500;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 🎬 ANIMACIONES */
+
+/* Animación de pulso para loading */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* Animación de flotación para el icono del clima */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación de entrada desde arriba */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de entrada desde abajo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de sacudida para errores */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+    .weather-container {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .weather {
+        padding: 30px 20px;
+    }
+
+    .temperature {
+        font-size: 48px;
+    }
+
+    .city {
+        font-size: 28px;
+    }
+
+    .weather-data {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input {
+        font-size: 14px;
+        height: 50px;
+    }
+
+    .search-bar img {
+        width: 50px;
+        height: 50px;
+    }
+}
